@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndoDriver - Aplikasi Transportasi & Pengiriman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-primary {
+            background-color: #009688;
+        }
+        .text-primary {
+            color: #009688;
+        }
+        .border-primary {
+            border-color: #009688;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #009688 0%, #009688 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(64, 224, 208, 0.3);
+        }
+        .testimonial-card {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-car text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Indo<span class="text-primary">Drive</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Beranda</a>
+                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Layanan</a>
+                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Tentang Kami</a>
+                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Mitra Driver</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition">Download App</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Transportasi & Pengiriman dalam Genggaman</h1>
+                    <p class="text-xl text-white mb-8 opacity-90">Pesan kendaraan atau kirim barang dengan cepat, aman, dan harga terjangkau kapan saja.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="bg-white text-primary px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition">
+                            <div class="flex items-center justify-center">
+                                <i class="fab fa-google-play mr-2"></i>
+                                Google Play
+                            </div>
+                        </a>
+                        <a href="#" class="bg-black text-white px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition">
+                            <div class="flex items-center justify-center">
+                                <i class="fab fa-apple mr-2"></i>
+                                App Store
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="WhatsApp Image 2025-06-25 at 15.46.16_e7177f5c.jpg" alt="IndoDriver App" class="w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Kami</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">IndoDriver menyediakan berbagai solusi transportasi dan pengiriman untuk kebutuhan sehari-hari Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Motor -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-motorcycle text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoRide</h3>
+                    <p class="text-gray-500 mb-4">Pesan motor online untuk perjalanan cepat dan hemat di tengah kemacetan.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobil -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-car text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoCar</h3>
+                    <p class="text-gray-500 mb-4">Perjalanan nyaman dengan mobil pribadi bersama driver profesional.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Delivery -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-box-open text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoSend</h3>
+                    <p class="text-gray-500 mb-4">Kirim paket atau belanjaan dengan cepat dan aman ke seluruh kota.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cara Kerja IndoDriver</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Hanya dalam 4 langkah mudah, Anda bisa memesan kendaraan atau mengirim paket</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="font-medium text-gray-800 mb-2">Download Aplikasi</h3>
+                    <p class="text-gray-500 text-sm">Install aplikasi IndoDriver dari Play Store atau App Store</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="font-medium text-gray-800 mb-2">Pilih Layanan</h3>
+                    <p class="text-gray-500 text-sm">Pilih jenis layanan yang Anda butuhkan</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="font-medium text-gray-800 mb-2">Tentukan Lokasi</h3>
+                    <p class="text-gray-500 text-sm">Masukkan lokasi penjemputan dan tujuan</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h3 class="font-medium text-gray-800 mb-2">Pesan Sekarang</h3>
+                    <p class="text-gray-500 text-sm">Konfirmasi pesanan dan tunggu driver datang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Testimoni dari pengguna setia IndoDriver</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Dewi Lestari</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Sangat praktis! Driver selalu datang tepat waktu dan ramah. Sudah pakai IndoDriver selama 2 tahun."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Budi Santoso</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"IndoSend sangat membantu bisnis saya. Pengiriman cepat dan harga bersaing. Recommended!"</p>
+                </div>
+                
+                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Rina Wijaya</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"IndoRide solusi terbaik untuk perjalanan sehari-hari. Hemat waktu dan uang dibanding taksi konvensional."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Registration -->
+    <section class="py-16 bg-primary bg-opacity-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Gabung Sebagai Mitra Driver</h2>
+                    <p class="text-gray-600 mb-6">Dapatkan penghasilan tambahan dengan menjadi mitra driver IndoDriver. Fleksibel, penghasilan menarik, dan dukungan penuh dari kami.</p>
+                    <ul class="mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-700">Penghasilan hingga Rp 8 juta/bulan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-700">Jam kerja fleksibel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-700">Bonus dan insentif menarik</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="bg-primary text-white px-6 py-3 rounded-full font-medium inline-block hover:bg-opacity-90 transition">Daftar Sekarang</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn.dribbble.com/users/1787323/screenshots/6547793/delivery.png" alt="Driver" class="w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download CTA -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Download Aplikasi IndoDriver Sekarang</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Nikmati kemudahan transportasi dan pengiriman dalam satu aplikasi</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="bg-white text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
+                    <div class="flex items-center justify-center">
+                        <i class="fab fa-google-play mr-2"></i>
+                        Google Play
+                    </div>
+                </a>
+                <a href="#" class="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
+                    <div class="flex items-center justify-center">
+                        <i class="fab fa-apple mr-2"></i>
+                        App Store
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Indo<span class="text-primary">Drive</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Solusi transportasi dan pengiriman terbaik di Indonesia.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Perusahaan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Karir</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Layanan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">IndoRide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">IndoCar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">IndoSend</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">IndoFood</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pusat Bantuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 IndoDriver. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button[aria-label="Open main menu"]');
+            // You would add click handler here for mobile menu
+        });
+    </script>
+</body>
+</html>
