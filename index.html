@@ -3,358 +3,665 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndoDriver - Aplikasi Transportasi & Pengiriman</title>
-    <link rel="icon" href="/Logo.jpg" type="image/jpexg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Template Landing Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
+        :root {
+            /* Color Variables - Mudah untuk diubah */
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --text-light: #9ca3af;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            
+            /* Border Radius Variables */
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            
+            /* Spacing Variables */
+            --section-padding: 80px 0;
+            --container-padding: 0 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
-        .bg-primary {
-            background-color: #009688;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
         }
-        .text-primary {
-            color: #009688;
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        .border-primary {
-            border-color: #009688;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #009688 0%, #009688 100%);
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(64, 224, 208, 0.3);
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
-        .testimonial-card {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 5px 24px;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--bg-white);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: var(--section-padding);
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background: var(--bg-white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            padding-right: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px 20px;
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-form textarea {
+            grid-column: 1 / -1;
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .section-title h2,
+            .about-text h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+            
+            .form-group {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-car text-primary text-2xl mr-2"></i>
-                        <img src="Logo.jpg" alt="IndoDriver Logo" class="max-h-10 w-auto object-contain" />
-
-                    </div>
-                </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Beranda</a>
-                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Layanan</a>
-                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Tentang Kami</a>
-                    <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Mitra Driver</a>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition">Download App</a>
-                </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+          <img src="Logo.jpg" alt="IndoDriver Logo" class="logo" />
+            <!-- <a href="#" class="logo">IndoDriver</a> -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Transportasi & Pengiriman dalam Genggaman</h1>
-                    <p class="text-xl text-white mb-8 opacity-90">Pesan kendaraan atau kirim barang dengan cepat, aman, dan harga terjangkau kapan saja.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#" class="bg-white text-primary px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition">
-                            <div class="flex items-center justify-center">
-                                <i class="fab fa-google-play mr-2"></i>
-                                Google Play
-                            </div>
-                        </a>
-                        <a href="#" class="bg-black text-white px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition">
-                            <div class="flex items-center justify-center">
-                                <i class="fab fa-apple mr-2"></i>
-                                App Store
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="Logo.jpg" alt="IndoDriver App" class="w-full max-w-md">
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>IndoDriver</h1>
+                <p>IndoDriver - Transportasi Lokal yang Aman dan Terjangkau</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn-primary">Pelajari Lebih Lanjut</a>
+                    <a href="#contact" class="btn-secondary">Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Kami</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">IndoDriver menyediakan berbagai solusi transportasi dan pengiriman untuk kebutuhan sehari-hari Anda</p>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Kami menyediakan solusi lengkap dengan teknologi terdepan dan tim yang berpengalaman untuk membantu bisnis Anda tumbuh.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Motor -->
-                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-motorcycle text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoRide</h3>
-                    <p class="text-gray-500 mb-4">Pesan motor online untuk perjalanan cepat dan hemat di tengah kemacetan.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Selengkapnya
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Inovasi Terdepan</h3>
+                    <p>Menggunakan teknologi terbaru dan metode inovatif untuk memberikan solusi terbaik bagi setiap tantangan bisnis Anda.</p>
                 </div>
-                
-                <!-- Mobil -->
-                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-car text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoCar</h3>
-                    <p class="text-gray-500 mb-4">Perjalanan nyaman dengan mobil pribadi bersama driver profesional.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Selengkapnya
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performa Tinggi</h3>
+                    <p>Mengoptimalkan setiap aspek untuk memberikan performa maksimal dan hasil yang melampaui ekspektasi Anda.</p>
                 </div>
-                
-                <!-- Delivery -->
-                <div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-box-open text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">IndoSend</h3>
-                    <p class="text-gray-500 mb-4">Kirim paket atau belanjaan dengan cepat dan aman ke seluruh kota.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Selengkapnya
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Menerapkan standar keamanan tertinggi untuk melindungi data dan privasi bisnis Anda dengan sistem yang robust.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cara Kerja IndoDriver</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Hanya dalam 4 langkah mudah, Anda bisa memesan kendaraan atau mengirim paket</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-                    <h3 class="font-medium text-gray-800 mb-2">Download Aplikasi</h3>
-                    <p class="text-gray-500 text-sm">Install aplikasi IndoDriver dari Play Store atau App Store</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Tentang Kami</h2>
+                    <p>Dengan pengalaman lebih dari 10 tahun di industri teknologi, kami telah membantu ratusan perusahaan mencapai tujuan digital mereka. Tim ahli kami terdiri dari profesional berpengalaman yang berdedikasi tinggi.</p>
+                    <p>Kami memahami bahwa setiap bisnis memiliki kebutuhan yang unik. Oleh karena itu, kami menyediakan solusi yang disesuaikan khusus untuk membantu Anda mencapai kesuksesan.</p>
+                    <a href="#contact" class="cta-button">Mari Berkolaborasi</a>
                 </div>
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                    <h3 class="font-medium text-gray-800 mb-2">Pilih Layanan</h3>
-                    <p class="text-gray-500 text-sm">Pilih jenis layanan yang Anda butuhkan</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                    <h3 class="font-medium text-gray-800 mb-2">Tentukan Lokasi</h3>
-                    <p class="text-gray-500 text-sm">Masukkan lokasi penjemputan dan tujuan</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-                    <h3 class="font-medium text-gray-800 mb-2">Pesan Sekarang</h3>
-                    <p class="text-gray-500 text-sm">Konfirmasi pesanan dan tunggu driver datang</p>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tim Kami">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Testimoni dari pengguna setia IndoDriver</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Dewi Lestari</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Mari Mulai Proyek Bersama</h2>
+                <p>Siap untuk mengembangkan bisnis Anda? Hubungi kami sekarang dan mari diskusikan bagaimana kami dapat membantu mencapai tujuan Anda.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap" required>
+                        <input type="email" placeholder="Email" required>
                     </div>
-                    <p class="text-gray-600">"Sangat praktis! Driver selalu datang tepat waktu dan ramah. Sudah pakai IndoDriver selama 2 tahun."</p>
-                </div>
-                
-                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Budi Santoso</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"IndoSend sangat membantu bisnis saya. Pengiriman cepat dan harga bersaing. Recommended!"</p>
-                </div>
-                
-                <div class="testimonial-card bg-white rounded-xl p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Rina Wijaya</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"IndoRide solusi terbaik untuk perjalanan sehari-hari. Hemat waktu dan uang dibanding taksi konvensional."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Driver Registration -->
-    <section class="py-16 bg-primary bg-opacity-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Gabung Sebagai Mitra Driver</h2>
-                    <p class="text-gray-600 mb-6">Dapatkan penghasilan tambahan dengan menjadi mitra driver IndoDriver. Fleksibel, penghasilan menarik, dan dukungan penuh dari kami.</p>
-                    <ul class="mb-8 space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700">Penghasilan hingga Rp 8 juta/bulan</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700">Jam kerja fleksibel</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700">Bonus dan insentif menarik</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="bg-primary text-white px-6 py-3 rounded-full font-medium inline-block hover:bg-opacity-90 transition">Daftar Sekarang</a>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="https://cdn.dribbble.com/users/1787323/screenshots/6547793/delivery.png" alt="Driver" class="w-full max-w-md">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Download CTA -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Download Aplikasi IndoDriver Sekarang</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Nikmati kemudahan transportasi dan pengiriman dalam satu aplikasi</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" class="bg-white text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
-                    <div class="flex items-center justify-center">
-                        <i class="fab fa-google-play mr-2"></i>
-                        Google Play
-                    </div>
-                </a>
-                <a href="#" class="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
-                    <div class="flex items-center justify-center">
-                        <i class="fab fa-apple mr-2"></i>
-                        App Store
-                    </div>
-                </a>
+                    <input type="text" placeholder="Subjek" required>
+                    <textarea placeholder="Pesan Anda..." required></textarea>
+                    <button type="submit" class="cta-button">Kirim Pesan</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-car text-primary text-2xl mr-2"></i>
-                        <span class="text-xl font-bold">Indo<span class="text-primary">Driver</span></span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Solusi transportasi dan pengiriman terbaik di Indonesia.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-medium mb-4">Perusahaan</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Karir</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Kontak</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-medium mb-4">Layanan</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">IndoRide</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">IndoCar</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">IndoSend</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">IndoFood</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-medium mb-4">Bantuan</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Pusat Bantuan</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 IndoDriver. All rights reserved.</p>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 YourBrand. Semua hak dilindungi.</p>
         </div>
     </footer>
 
     <script>
-        // Simple mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.querySelector('button[aria-label="Open main menu"]');
-            // You would add click handler here for mobile menu
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background pada scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--bg-white)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // WhatsApp Chat Box
+        window.onload = function () {
+            var chatBox = document.createElement("div");
+            chatBox.innerHTML = `<a href="https://wa.me/6281234567890" target="_blank">Chat via WhatsApp</a>`;
+            chatBox.style.cssText = `
+                position: fixed; 
+                bottom: 20px; 
+                right: 20px; 
+                background: #25d366; 
+                border-radius: var(--radius); 
+                padding: 12px 20px; 
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+                z-index: 1000;
+                animation: fadeInUp 0.5s ease;
+            `;
+            chatBox.querySelector('a').style.cssText = `
+                color: white; 
+                text-decoration: none; 
+                font-weight: 600; 
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            chatBox.querySelector('a').innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                Chat via WhatsApp
+            `;
+            document.body.appendChild(chatBox);
+        }
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulasi pengiriman form
+            const button = this.querySelector('button');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Mengirim...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Terkirim';
+                button.style.background = 'var(--accent-color)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Animasi scroll untuk cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
         });
     </script>
 </body>
