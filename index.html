@@ -16,190 +16,177 @@
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <img src="Logo.jpg" alt="IndoDriver Logo" class="logo" />
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="#download" class="cta-button desktop">Download Now</a>
-        <div class="burger" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <nav>
+      <img src="Logo.jpg" alt="IndoDriver Logo" class="logo" />
+      <ul class="nav-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#features">Fitur</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <a href="#download" class="cta-button desktop">Unduh Aplikasi</a>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
 
-    <div class="nav-overlay" id="navOverlay">
-      <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#features" onclick="closeMenu()">Features</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-      <a href="#download" class="cta-button" onclick="closeMenu()"
-        >Download Now</a
-      >
+  <div class="nav-overlay" id="navOverlay">
+    <a href="#home" onclick="closeMenu()">Beranda</a>
+    <a href="#features" onclick="closeMenu()">Fitur</a>
+    <a href="#about" onclick="closeMenu()">Tentang</a>
+    <a href="#contact" onclick="closeMenu()">Kontak</a>
+    <a href="#download" class="cta-button" onclick="closeMenu()">Unduh Aplikasi</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>IndoDriver – Solusi Transportasi Digital yang Aman, Cepat, dan Terjangkau</h1>
+        <p>
+          IndoDriver adalah aplikasi transportasi modern untuk kebutuhan harian, mulai dari perjalanan pribadi hingga pengiriman barang, dengan harga transparan dan mitra driver profesional.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#features" class="btn-primary">Jelajahi Fitur Kami</a>
+          <a href="#contact" class="btn-secondary">Daftar Sebagai Driver</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1>IndoDriver – Transportasi Lokal yang Aman dan Terjangkau</h1>
-          <p>
-            Solusi transportasi digital untuk perjalanan harian dan pengiriman
-            paket dengan harga transparan dan driver profesional.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#features" class="btn-primary">Pelajari Lebih Lanjut</a>
-            <a href="#contact" class="btn-secondary">Hubungi Kami</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-title">
-          <h2>Mengapa Memilih Kami?</h2>
-          <p>
-            Kami menyediakan solusi lengkap dengan teknologi terdepan dan tim
-            yang berpengalaman untuk membantu bisnis Anda tumbuh.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Pesan Ojek & Mobil</h3>
-            <p>
-              Pesan transportasi sesuai kebutuhan Anda, mulai dari ojek hingga
-              mobil dengan driver profesional siap mengantar.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Kirim Paket Cepat</h3>
-            <p>
-              Kirim dokumen atau paket penting dengan cepat dan aman ke seluruh
-              kota dengan layanan ekspres kami.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Harga Transparan</h3>
-            <p>
-              Tidak ada biaya tersembunyi. Anda tahu persis berapa yang harus
-              dibayar sebelum memesan perjalanan.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Tentang Kami</h2>
-            <p>Bergabunglah Sebagai Driver Mitra Kami</p>
-            <p>
-              Dapatkan penghasilan tambahan dengan menjadi driver mitra
-              IndoDriver. Nikmati berbagai keuntungan dan dukungan penuh dari
-              kami.
-            </p>
-            <a href="#contact" class="cta-button">Daftar Sekarang</a>
-          </div>
-          <div class="about-image">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Tim Kami"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App Download CTA -->
-    <section id="download" class="download-section">
-      <div class="download-container">
-        <h2>Unduh Aplikasi IndoDriver Sekarang</h2>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Keunggulan IndoDriver</h2>
         <p>
-          Tersedia di platform iOS dan Android. Pesan transportasi atau kirim
-          paket kapan saja, di mana saja.
+          Kami menghadirkan layanan terbaik dengan teknologi terkini dan dukungan penuh untuk mendukung mobilitas dan usaha Anda.
         </p>
-        <div class="download-buttons">
-          <a href="#" class="download-button apple">
-            <i class="fab fa-apple"></i>
-            <div class="text">
-              <div class="small">Download on the</div>
-              <div class="big">App Store</div>
-            </div>
-          </a>
-          <a href="#" class="download-button google">
-            <i class="fab fa-google-play"></i>
-            <div class="text">
-              <div class="small">Get it on</div>
-              <div class="big">Google Play</div>
-            </div>
-          </a>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Pesan Ojek & Mobil</h3>
+          <p>
+            Pesan ojek atau mobil hanya dengan beberapa klik. Driver kami siap menjemput dengan cepat dan aman.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Kirim Paket Cepat</h3>
+          <p>
+            Kirim dokumen atau barang penting secara instan dengan layanan kurir cepat dan terpercaya.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Harga Transparan</h3>
+          <p>
+            Tanpa biaya tersembunyi. Semua tarif terlihat jelas sebelum Anda melakukan pemesanan.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="contact-content">
-          <h2>Bergabunglah Sebagai Driver Mitra Kami</h2>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Menjadi Mitra IndoDriver</h2>
+          <p>Bergabung sebagai Driver Profesional</p>
           <p>
-            Dapatkan penghasilan tambahan dengan menjadi driver mitra
-            IndoDriver. Nikmati berbagai keuntungan dan dukungan penuh dari
-            kami.
+            Raih penghasilan tambahan dengan fleksibilitas waktu dan dukungan penuh dari tim IndoDriver. Ayo bergabung sebagai mitra driver hari ini!
           </p>
+          <a href="#contact" class="cta-button">Daftar Sekarang</a>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Tim Kami"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <form
-            action="https://formspree.io/f/xovwygke"
-            method="POST"
-            class="contact-form"
-          >
-            <div class="form-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="Nama Lengkap"
-                required
-              />
-              <input type="email" name="email" placeholder="Email" required />
-            </div>
-            <input type="text" name="subject" placeholder="Subjek" required />
-            <textarea
-              name="message"
-              placeholder="Pesan Anda..."
+  <!-- App Download CTA -->
+  <section id="download" class="download-section">
+    <div class="download-container">
+      <h2>Mulai Perjalanan Anda Bersama IndoDriver</h2>
+      <p>
+        Aplikasi tersedia di iOS dan Android. Nikmati kemudahan mobilitas dan pengiriman barang kapan saja.
+      </p>
+      <div class="download-buttons">
+        <a href="#" class="download-button apple">
+          <i class="fab fa-apple"></i>
+          <div class="text">
+            <div class="small">Download on the</div>
+            <div class="big">App Store</div>
+          </div>
+        </a>
+        <a href="#" class="download-button google">
+          <i class="fab fa-google-play"></i>
+          <div class="text">
+            <div class="small">Get it on</div>
+            <div class="big">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Hubungi Kami</h2>
+        <p>
+          Tertarik menjadi bagian dari IndoDriver? Kirim pesan Anda melalui formulir berikut dan tim kami akan segera menghubungi Anda.
+        </p>
+
+        <form
+          action="https://formspree.io/f/xovwygke"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nama Lengkap"
               required
-            ></textarea>
-            <button type="submit" class="cta-button">Kirim Pesan</button>
-          </form>
-        </div>
+            />
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <input type="text" name="subject" placeholder="Subjek" required />
+          <textarea
+            name="message"
+            placeholder="Pesan Anda..."
+            required
+          ></textarea>
+          <button type="submit" class="cta-button">Kirim Pesan</button>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>
-          &copy; 2025 IndoDriver. Semua hak dilindungi. | Status: Dalam
-          Pengembangan
-        </p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2025 IndoDriver. Seluruh hak cipta dilindungi. | Status: Dalam Pengembangan
+      </p>
+    </div>
+  </footer>
+ <script src="script.js" defer></script>
+</body>
 
-    <script src="script.js"></script>
-  </body>
 </html>
