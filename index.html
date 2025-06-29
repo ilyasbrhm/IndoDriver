@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndoDriver</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             /* Color Variables - Mudah untuk diubah */
@@ -126,7 +127,7 @@
         /* Hero Section - adjusted for banner */
         .hero {
             background: linear-gradient(135deg, #1abc9c 0%, #1abc9c 100%);
-            padding: 100px 0 50px; /* Adjusted for dev banner */
+            padding: 150px 0 85px; /* Adjusted for dev banner */
             text-align: center;
             color: white;
             position: relative;
@@ -165,47 +166,6 @@
             margin-left: auto;
             margin-right: auto;
             animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        /* Development Notice */
-        .dev-notice {
-            background: var(--warning-bg);
-            border: 2px solid var(--warning-color);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 600px;
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
-
-        .dev-notice-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--text-dark);
-        }
-
-        .dev-notice-icon {
-            font-size: 24px;
-            color: var(--warning-color);
-            animation: bounce 2s infinite;
-        }
-
-        .dev-notice-text {
-            flex: 1;
-        }
-
-        .dev-notice-text h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--warning-color);
-        }
-
-        .dev-notice-text p {
-            font-size: 14px;
-            color: var(--text-gray);
-            margin: 0;
         }
 
         .hero-buttons {
@@ -443,7 +403,100 @@
             background-color: #333;
         }
 
-        
+        .download-section {
+            background-color: white;
+            padding: 64px 20px;
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .download-container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .download-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+
+        .download-section p {
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (min-width: 640px) {
+            .download-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .download-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            gap: 12px;
+        }
+
+        .download-button .text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .download-button .small {
+            font-size: 12px;
+            line-height: 1;
+            color: inherit;
+        }
+
+        .download-button .big {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        .download-button.google {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ccc;
+        }
+
+        .download-button.google:hover {
+            background-color: #f3f3f3;
+        }
+
+        .download-button.apple {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .download-button.apple:hover {
+            background-color: #333333;
+        }
+
+
         /* Contact Section */
         .contact {
             padding: var(--section-padding);
@@ -640,7 +693,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#download-section" class="cta-button">Download Now</a>
+            <a href="#download" class="cta-button">Download Now</a>
         </nav>
     </header>
 
@@ -650,17 +703,6 @@
             <div class="hero-content">
                 <h1>IndoDriver – Transportasi Lokal yang Aman dan Terjangkau</h1>
                 <p>Solusi transportasi digital untuk perjalanan harian dan pengiriman paket dengan harga transparan dan driver profesional.</p>
-                
-                <!-- Development Notice -->
-                <div class="dev-notice">
-                    <div class="dev-notice-content">
-                        <div class="dev-notice-icon">⚠️</div>
-                        <div class="dev-notice-text">
-                            <h3>Aplikasi Sedang Dikembangkan</h3>
-                            <p>Aplikasi IndoDriver saat ini masih dalam tahap pengembangan dan belum tersedia untuk umum. Kami sedang bekerja keras untuk memberikan pengalaman terbaik untuk Anda.</p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="hero-buttons">
                     <a href="#features" class="btn-primary">Pelajari Lebih Lanjut</a>
@@ -715,40 +757,54 @@
     </section>
 
     <!-- App Download CTA -->
-    <section class="download-section" id="download-section">
+    <section id="download" class="download-section">
         <div class="download-container">
-            <h2>Download Aplikasi IndoDriver Sekarang</h2>
-            <p>Nikmati kemudahan transportasi dan pengiriman dalam satu aplikasi</p>
+            <h2>Unduh Aplikasi IndoDriver Sekarang</h2>
+            <p>
+                Tersedia di platform iOS dan Android. Pesan transportasi atau kirim paket kapan saja, di mana saja.
+            </p>
             <div class="download-buttons">
-                <a href="#" class="download-button google">
-                    <i class="fab fa-google-play"></i> Google Play
-                </a>
                 <a href="#" class="download-button apple">
-                    <i class="fab fa-apple"></i> App Store
+                    <i class="fab fa-apple"></i>
+                    <div class="text">
+                        <div class="small">Download on the</div>
+                        <div class="big">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="download-button google">
+                    <i class="fab fa-google-play"></i>
+                    <div class="text">
+                        <div class="small">Get it on</div>
+                        <div class="big">Google Play</div>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
+
 
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Bergabunglah Sebagai Driver Mitra Kami</h2>
-                <p>Dapatkan penghasilan tambahan dengan menjadi driver mitra IndoDriver. Nikmati berbagai keuntungan dan dukungan penuh dari kami.</p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nama Lengkap" required>
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <input type="text" placeholder="Subjek" required>
-                    <textarea placeholder="Pesan Anda..." required></textarea>
-                    <button type="submit" class="cta-button">Kirim Pesan</button>
-                </form>
+    <div class="container">
+        <div class="contact-content">
+        <h2>Bergabunglah Sebagai Driver Mitra Kami</h2>
+        <p>Dapatkan penghasilan tambahan dengan menjadi driver mitra IndoDriver. Nikmati berbagai keuntungan dan dukungan penuh dari kami.</p>
+
+        <form action="https://formspree.io/f/xovwygke" method="POST" class="contact-form">
+            <div class="form-group">
+            <input type="text" name="name" placeholder="Nama Lengkap" required>
+            <input type="email" name="email" placeholder="Email" required>
             </div>
+            <input type="text" name="subject" placeholder="Subjek" required>
+            <textarea name="message" placeholder="Pesan Anda..." required></textarea>
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+
         </div>
+    </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -817,30 +873,6 @@
             document.body.appendChild(chatBox);
         }
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulasi pengiriman form
-            const button = this.querySelector('button');
-            const originalText = button.textContent;
-            
-            button.textContent = 'Mengirim...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                button.textContent = 'Terkirim';
-                button.style.background = 'var(--accent-color)';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.disabled = false;
-                    button.style.background = '';
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-
         // Animasi scroll untuk cards
         const observerOptions = {
             threshold: 0.1,
@@ -860,13 +892,6 @@
             observer.observe(card);
         });
 
-        // Development Notice Alert
-        setTimeout(() => {
-            if (!localStorage.getItem('devNoticeShown')) {
-                alert('⚠️ PEMBERITAHUAN:\n\nAplikasi IndoDriver saat ini masih dalam tahap pengembangan dan belum tersedia untuk digunakan secara umum.\n\nTerima kasih atas pengertian Anda.');
-                localStorage.setItem('devNoticeShown', 'true');
-            }
-        }, 2000);
     </script>
 </body>
 </html>
